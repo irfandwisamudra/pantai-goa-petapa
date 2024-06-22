@@ -1,0 +1,624 @@
+.select2-container {
+    /* The container where the selectbox is housing*/
+    position: relative;
+    margin: 0px;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: middle;
+}
+.select2-container .select2-selection--single {
+    /* Selection box itself */
+    box-sizing: border-box;
+    display: block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border-radius: 0.25rem;
+    border-width: 1px;
+    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
+        0 1px 2px -1px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    /* DIV inside Selection box with text, clear button and arrow down*/
+    display: block;
+    height: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 0.25rem;
+    padding-right: 1.5rem;
+}
+.select2-container .select2-selection--single .select2-selection__clear {
+    /* The DIV where the X is housing to clear the chosen option */
+    position: relative;
+    margin: -0.25rem;
+}
+.select2-container[dir="rtl"]
+    .select2-selection--single
+    .select2-selection__rendered {
+    /*@apply;*/
+}
+
+.select2-container .select2-selection--multiple {
+    box-sizing: border-box;
+    display: block;
+    height: 1rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    overflow: hidden;
+}
+
+.select2-container .select2-selection--multiple .select2-selection__rendered {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 0.5rem;
+}
+.select2-container .select2-search--inline {
+    /* Search box*/
+    float: left;
+}
+.select2-container .select2-search--inline .select2-search__field {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    box-sizing: border-box;
+    width: 100%;
+    border-width: 1px;
+    padding-left: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+@media (prefers-color-scheme: dark) {
+    .select2-container .select2-search--inline .select2-search__field {
+        --tw-border-opacity: 1;
+    }
+}
+.select2-container
+    .select2-search--inline
+    .select2-search__field::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.select2-dropdown {
+    /* Dropdown area after the arrow down is clicked */
+    position: absolute;
+    z-index: 50;
+    float: left;
+    box-sizing: border-box;
+    display: block;
+    width: auto;
+    border-width: 1px;
+    border-style: solid;
+    --tw-border-opacity: 1;
+    --tw-bg-opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+    .select2-dropdown {
+        --tw-bg-opacity: 1;
+    }
+}
+
+.select2-results {
+    display: block;
+    --tw-text-opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+    .select2-results {
+        --tw-text-opacity: 1;
+    }
+}
+
+.select2-results__options {
+    margin: 0px;
+    list-style-type: none;
+    padding: 0px;
+}
+
+.select2-results__option {
+    /* The rows with results that you see after dropdown.
+Increase p-1 to p-2 to have more space between results */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    padding: 0.25rem;
+}
+.select2-results__option[aria-selected] {
+    cursor: pointer;
+}
+
+.select2-container--open .select2-dropdown {
+    /* Dropdown container opened and results are shown*/
+    left: 0px;
+}
+
+.select2-container--open .select2-dropdown--above {
+    /* The left and right borders of the option rows */
+    border-radius: 0.25rem;
+    --tw-border-opacity: 1;
+    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
+        0 1px 2px -1px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+@media (prefers-color-scheme: dark) {
+    .select2-container--open .select2-dropdown--above {
+        --tw-border-opacity: 1;
+    }
+}
+
+.select2-container--open .select2-dropdown--below {
+    /* The left and right borders of the option rows */
+    --tw-border-opacity: 1;
+    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
+        0 1px 2px -1px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+@media (prefers-color-scheme: dark) {
+    .select2-container--open .select2-dropdown--below {
+        --tw-border-opacity: 1;
+    }
+}
+
+.select2-search--dropdown {
+    /* Search dropdown element*/
+    display: block;
+}
+.select2-search--dropdown .select2-search__field {
+    /* Search box itself where you can enter text*/
+    box-sizing: border-box;
+    height: 2.5rem;
+    border-radius: 0.25rem;
+    border-width: 2px;
+    --tw-border-opacity: 1;
+    --tw-bg-opacity: 1;
+    padding: 0.25rem;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+@media (prefers-color-scheme: dark) {
+    .select2-search--dropdown .select2-search__field {
+        --tw-border-opacity: 1;
+        --tw-bg-opacity: 1;
+        --tw-text-opacity: 1;
+    }
+}
+.select2-search--dropdown .select2-search__field {
+    width: 100%;
+}
+.select2-search--dropdown .select2-search__field::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+.select2-search--dropdown.select2-search--hide {
+    display: none;
+}
+
+.select2-close-mask {
+    margin: 0px;
+    display: block;
+    width: 3rem;
+    min-width: 100%;
+    padding: 0px;
+    border: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-height: 100%;
+    height: auto;
+    width: auto;
+    opacity: 0;
+    z-index: 99;
+    filter: alpha(opacity=0);
+}
+
+.select2-hidden-accessible {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}
+
+/* 
+
+Default template settings:
+
+*/
+
+.select2-container--default .select2-selection--single {
+    /* Selection bar - Self */
+    height: 2.5rem;
+    border-width: 1px;
+    border-style: solid;
+    --tw-bg-opacity: 1;
+    padding: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    .select2-container--default .select2-selection--single {
+        --tw-border-opacity: 1;
+        --tw-bg-opacity: 1;
+    }
+}
+.select2-container--default
+    .select2-selection--single
+    .select2-selection__rendered {
+    /* Selection bar - Text color of the item you selected from the results */
+    --tw-text-opacity: 1;
+    color: #444;
+}
+@media (prefers-color-scheme: dark) {
+    html.dark
+        .select2-container--default
+        .select2-selection--single
+        .select2-selection__rendered {
+        --tw-text-opacity: 1;
+        color: white;
+    }
+}
+
+.select2-container--default
+    .select2-selection--single
+    .select2-selection__clear {
+    /* Selection bar - Clear button - If this property is enabled*/
+    float: right;
+    cursor: pointer;
+    --tw-text-opacity: 1;
+}
+.select2-container--default
+    .select2-selection--single
+    .select2-selection__placeholder {
+    /* Selection bar - Color of the placeholder text before selection - If this property is enabled */
+    --tw-text-opacity: 1;
+}
+@media (prefers-color-scheme: dark) {
+    .select2-container--default
+        .select2-selection--single
+        .select2-selection__placeholder {
+        --tw-text-opacity: 1;
+    }
+}
+.select2-container--default
+    .select2-selection--single
+    .select2-selection__arrow {
+    /* Selection bar - DIV where the arrow pointing down is living*/
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 2.5rem;
+    width: 2rem;
+}
+.select2-container--default
+    .select2-selection--single
+    .select2-selection__arrow
+    b {
+    /* Arrow is a CSS triangle that does not exists in Tailwind without a package */
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    border-top-width: 4px;
+    border-right-width: 4px;
+    border-bottom-width: 0px;
+    border-left-width: 4px;
+    border-style: solid;
+    left: 50%;
+    margin-left: -4px;
+    margin-top: -2px;
+    top: 50%;
+}
+
+.select2-container--default[dir="rtl"]
+    .select2-selection--single
+    .select2-selection__clear {
+    /* Selection bar - Clear button - If this property is enabled from right to left*/
+    float: left;
+    margin-left: 1rem;
+}
+
+.select2-container--default[dir="rtl"]
+    .select2-selection--single
+    .select2-selection__arrow {
+    /* Placement of the dropdown arrow when in rtl mode */
+    left: 0px;
+    right: auto;
+}
+
+.select2-container--default.select2-container--disabled
+    .select2-selection--single {
+    /* Selection by property disabled*/
+    cursor: default;
+    --tw-bg-opacity: 1;
+}
+.select2-container--default.select2-container--disabled
+    .select2-selection--single
+    .select2-selection__clear {
+    /* Selection bar - Hide the clear cross when selection bar is disabled*/
+    display: none;
+}
+
+.select2-container--default.select2-container--open
+    .select2-selection--single
+    .select2-selection__arrow
+    b {
+    border-width: 0 4px 5px 4px;
+}
+
+.select2-container--default .select2-selection--multiple {
+    height: 100%;
+    min-height: 100%;
+    border-radius: 0.25rem;
+    border-width: 1px;
+    border-style: solid;
+    --tw-bg-opacity: 1;
+    padding: 0.25rem;
+    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
+        0 1px 2px -1px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+@media (prefers-color-scheme: dark) {
+    .select2-container--default .select2-selection--multiple {
+        --tw-border-opacity: 1;
+        --tw-bg-opacity: 1;
+    }
+}
+
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__rendered {
+    margin: 0px;
+    box-sizing: border-box;
+    min-width: 100%;
+    list-style-type: none;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__rendered
+    li {
+    list-style-type: none;
+}
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__clear {
+    float: right;
+    margin-top: 0.25rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    padding: 0.25rem;
+}
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice {
+    float: left;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    margin-right: 0.25rem;
+    cursor: default;
+    border-radius: 0.25rem;
+    border-width: 1px;
+    --tw-bg-opacity: 1;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    --tw-text-opacity: 1;
+}
+@media (prefers-color-scheme: dark) {
+    .select2-container--default
+        .select2-selection--multiple
+        .select2-selection__choice {
+        --tw-bg-opacity: 1;
+        --tw-text-opacity: 1;
+    }
+}
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice__remove {
+    margin-right: 0.25rem;
+    display: inline-block;
+    cursor: pointer;
+    --tw-text-opacity: 1;
+}
+@media (prefers-color-scheme: dark) {
+    .select2-container--default
+        .select2-selection--multiple
+        .select2-selection__choice__remove {
+        --tw-text-opacity: 1;
+    }
+}
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice__remove:hover {
+    --tw-text-opacity: 1;
+}
+@media (prefers-color-scheme: dark) {
+    .select2-container--default
+        .select2-selection--multiple
+        .select2-selection__choice__remove:hover {
+        --tw-text-opacity: 1;
+    }
+}
+.select2-container--default.select2-container--focus
+    .select2-selection--multiple {
+    border-width: 2px;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.select2-container--default.select2-container--disabled
+    .select2-selection__choice__remove {
+    display: none;
+}
+.select2-container--classic
+    .select2-selection--multiple
+    .select2-selection__choice {
+    float: left;
+    margin-top: 0.25rem;
+    margin-right: 0.25rem;
+    cursor: default;
+    border-radius: 0.25rem;
+    border-width: 2px;
+    --tw-bg-opacity: 1;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
+        0 1px 2px -1px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+@media (prefers-color-scheme: dark) {
+    .select2-container--classic
+        .select2-selection--multiple
+        .select2-selection__choice {
+        --tw-border-opacity: 1;
+    }
+}
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    /* The border of the search textbox */
+    border-style: solid;
+    color: #444;
+}
+
+.select2-container--default .select2-search--inline .select2-search__field {
+    /* Search textbox */
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    user-select: text;
+    border-style: none;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.select2-container--default .select2-results > .select2-results__options {
+    /* Hight of the dropdown zone where the options or results are visible */
+    height: 100%;
+    max-height: 8rem;
+    overflow-y: auto;
+}
+
+.select2-container--default .select2-results__option[role="group"] {
+    /* No clue what this does */
+    padding: 0px;
+}
+
+.select2-container--default .select2-results__option[aria-disabled="true"] {
+    --tw-text-opacity: 1;
+}
+
+.select2-container--default .select2-results__option[aria-selected="true"] {
+    /* The already selected option row color */
+    --tw-bg-opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+    .select2-container--default .select2-results__option[aria-selected="true"] {
+        --tw-text-opacity: 1;
+    }
+}
+.select2-results__option--selected {
+    display: none;
+}
+.select2-container--default .select2-results__option .select2-results__option {
+    padding-left: 1em;
+}
+.select2-container--default
+    .select2-results__option
+    .select2-results__option
+    .select2-results__group {
+    padding-left: 0;
+}
+.select2-container--default
+    .select2-results__option
+    .select2-results__option
+    .select2-results__option {
+    margin-left: -1em;
+    padding-left: 2em;
+}
+.select2-container--default
+    .select2-results__option
+    .select2-results__option
+    .select2-results__option
+    .select2-results__option {
+    margin-left: -2em;
+    padding-left: 3em;
+}
+.select2-container--default
+    .select2-results__option
+    .select2-results__option
+    .select2-results__option
+    .select2-results__option
+    .select2-results__option {
+    margin-left: -3em;
+    padding-left: 4em;
+}
+.select2-container--default
+    .select2-results__option
+    .select2-results__option
+    .select2-results__option
+    .select2-results__option
+    .select2-results__option
+    .select2-results__option {
+    margin-left: -4em;
+    padding-left: 5em;
+}
+.select2-container--default
+    .select2-results__option
+    .select2-results__option
+    .select2-results__option
+    .select2-results__option
+    .select2-results__option
+    .select2-results__option
+    .select2-results__option {
+    margin-left: -5em;
+    padding-left: 6em;
+}
+
+.select2-container--default
+    .select2-results__option--highlighted[aria-selected] {
+    /* Background color and text color of the options rows when select is open */
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+    .select2-container--default
+        .select2-results__option--highlighted[aria-selected] {
+        --tw-bg-opacity: 1;
+        --tw-text-opacity: 1;
+    }
+}
+
+.select2-container--default .select2-results__group {
+    /* Have no idea what this is for */
+    display: block;
+    cursor: default;
+    padding: 6px;
+}
